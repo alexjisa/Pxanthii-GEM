@@ -35,18 +35,11 @@ If you find this template does not fit your needs, we would appreciate if you co
 **Utilisation:** {{ experimental data reconstruction; multi-omics integrative analysis;, _in silico_ strain design; model template }}  
 **Field:** {{ metabolic-network reconstruction }}  
 **Type of model:** {{ reconstruction; curated }}  
-**Model source:** {{ [YeastMetabolicNetwork](http://doi.org/10.1038/nbt1492) }}  
-**Omic source:** {{ genomics; metabolomics }}  
-**Taxonomic name:** {{ _Saccharomyces cerevisiae_ }}  
-**Taxonomy ID:** {{ [taxonomy:559292](https://identifiers.org/taxonomy:559292) }}  
-**Genome ID:** {{ [insdc.gca:GCA_000146045.2](https://identifiers.org/insdc.gca:GCA_000146045.2)  }}  
-**Metabolic system:** {{ general metabolism }}  
-**Tissue:**  
-**Bioreactor:**    
-**Cell type:**  
-**Cell line:**  
-**Strain:** {{ S288C }}  
-**Condition:** {{ aerobic; glucose-limited; defined media }}  
+**Omic source:** {{ Genomics; Transcriptomics; Metabolomics }}  
+**Taxon:** {{ _Podosphaera xanthii_ }}  
+**Isolate:** {{ 2086 }}  
+**GenBank Assembly:** {{ GCA_014884795.1 }}  
+**Metabolic system:** {{ General metabolism }}  
 
 
 ### Installation
