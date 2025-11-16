@@ -1,59 +1,86 @@
-> Introduction (please delete after reading):  
-[standard-GEM](https://github.com/MetabolicAtlas/standard-GEM) is a template repository that aims to standardize the format of genome-scale metabolic models (GEMs) versioned with git. In addition to encouraging the open-sourcing of GEMs, it facilitates the import of GEMs into databases and online websites. Moreover, it provides the community with a familiar structure that is easy to adopt through this repository itself. The template comes with a set of requirements and recommendations, packaged as to-do items in a hidden Markdown file in this repository `.standard-GEM.md`. After downloading this repository, or using it as a template, those to-do items provide guidance to how adherence to the standard can be obtained.
-
-> Instructions for this `README` (please delete after reading):  
-This is the `README.md` template provided by [standard-GEM](https://github.com/MetabolicAtlas/standard-GEM) and was crafted to cover most use-cases.  
-Feel free to edit this template `README`. Blanks are indicated by `{{ test }}`. One may use a search function to find these `{{`. Here are some examples of blanks used throughout this file: `{{organization or username}}` is the organization name or username for this GitHub repository, eg. `SysBioChalmers`; `{{repository name}}` is the name of this GitHub repository, eg. `yeast-GEM`.  
-If you find this template does not fit your needs, we would appreciate if you could report this by creating a new issue on [standard-GEM](https://github.com/MetabolicAtlas/standard-GEM/issues).
-
-
-## Pxanthii-GEM: A genome-scale metabolic model of the powdery mildew fungus Podosphaera xanthii
-
-[![Version](https://badge.fury.io/gh/{{organization or username}}%2F{{repository name}}.svg)](https://badge.fury.io/gh/sysbiochalmers/yeast-gem)  
-[![Zenodo](https://zenodo.org/badge/{{Zenodo ID}}.svg)](https://zenodo.org/badge/latestdoi/{{Zenodo ID}})  
-[![Gitter chat](https://badges.gitter.im/{{organization or username}}/{{repository name}}.svg)](https://gitter.im/{{organization or username}}/{{repository name}})
-
+## PxCm-GEM: Genome-scale metabolic models for pathogen–plant interaction
 
 #### Description
 
-{{ fill in a short description or the paper abstract }}
+PxCm-GEM is a repository that hosts a set of genome-scale metabolic models describing the biotrophic interaction between the powdery mildew fungus *Podosphaera xanthii* and the cucurbit plant *Cucumis melo*.  
 
+The repository currently includes three complementary models:
+
+- **Px-GEM**: genome-scale metabolic model of *Podosphaera xanthii*, an obligate biotrophic fungal pathogen causing powdery mildew in cucurbits.  
+- **Cm-GEM**: genome-scale metabolic model of the host plant *Cucumis melo*.  
+- **PxCm-GEM**: integrated host–pathogen interaction model between *P. xanthii* and *C. melo*.
+
+The models are reconstructed and curated using genomic annotations, transcriptomics and metabolomics data, and they follow the [standard-GEM](https://github.com/MetabolicAtlas/standard-GEM) structure to ensure transparency, version control and compatibility with the COBRA community ecosystem.
+
+---
 
 #### Citation
 
-> If you use the model or the omics data in your research, please cite:
+> If you use any of the models (Px-GEM, Cm-GEM or PxCm-GEM), or the associated omics datasets in your research, please cite:
+
+---
 
 #### Model Keywords
 
-> Keywords are be separated by semicolons.
-> The `Model source` field contains the source(s) of the current model, eg existing GEMs. If possible, use the Markdown format to add the URL with the DOI. The (NCBI) taxonomy ID should be provided in the [format from identifiers.org](https://registry.identifiers.org/registry/taxonomy). For the genome identifier, please provide the ENA/GenBank/RefSeq identifier via *identifiers.org*, or from other sources such as PATRIC or KBase.  
+**Utilisation:** experimental data reconstruction; multi-omics integrative analysis; host–pathogen interaction modelling; target identification; _in silico_ perturbation analysis  
+**Field:** metabolic-network reconstruction; systems biology; plant pathology  
+**Type of model:** reconstruction; curated; host–pathogen interaction  
+**Omic source:** Genomics; Transcriptomics; Metabolomics  
+**Taxon:** [identifiers.org/taxonomy:181420](https://identifiers.org/taxonomy:181420) (_Podosphaera xanthii_); [identifiers.org/taxonomy:3656](https://identifiers.org/taxonomy:3656) (_Cucumis melo_)  
+**Isolate (fungus):** 2086  
+**GenBank Assembly (fungus):** GCA_014884795.1  
+**Metabolic system:** general metabolism; plant–fungal biotrophic interaction
 
-**Utilisation:** {{ experimental data reconstruction; multi-omics integrative analysis;, _in silico_ strain design; model template }}  
-**Field:** {{ metabolic-network reconstruction }}  
-**Type of model:** {{ reconstruction; curated }}  
-**Omic source:** Genomics; Transcriptomics; Metabolomics 
-**Taxon:** _Podosphaera xanthii_
-**Isolate:** 2086 
-**GenBank Assembly:** GCA_014884795.1
-**Metabolic system:** General metabolism
+#### Model statistics
+
+|                          | *Podosphaera xanthii* 2086           | *Cucumis melo* DHL92           |
+|--------------------------|--------------------------------------|--------------------------------|
+| **Model (name)**         | Px-GEM                               | Cm-GEM                         |
+| **Reactions (number)**   | 1,560                                | 2,602                          |
+| **Metabolites (number)** | 1,749                                | 2,703                          |
+| **Genes (number)**       | 828                                  | 3,319                          |
+
+---
 
 #### Model Overview
 
+This repository adheres to the [standard-GEM](https://github.com/MetabolicAtlas/standard-GEM) layout. In brief:
+
+- `model/`
+  - `Px-GEM/`  
+    Genome-scale model of *Podosphaera xanthii* in multiple formats (e.g. SBML, JSON, YAML, MAT).
+  - `Cm-GEM/`  
+    Genome-scale model of *Cucumis melo*.
+  - `PxCm-GEM/`  
+    Integrated host–pathogen model including:
+    - Separate compartments for host, pathogen and interface (e.g. apoplast, haustorium).  
+    - Exchange reactions capturing nutrient acquisition, redox coupling and metabolite flows during infection.  
+
+- `data/`  
+  Omics and annotation data used for reconstruction and curation, including:
+  - Genome annotations for *P. xanthii* isolate 2086 (GCA_014884795.1).  
+  - Transcriptomics and metabolomics datasets from infected and control plant tissues.  
+
+- `code/`  
+  Scripts for:
+  - Model reconstruction and processing  
+  - Integration of omics data  
+  - Simulation and analysis (_e.g._ FBA, FVA, gene/reaction knockouts, condition-specific models)
+
+More details on the exact file formats and reconstruction pipeline are provided in the `docs/` folder.
+
+---
+
 ### Installation
 
-{{ Be mindful of users who do not have a typical background - provide a clear overview of the required software. Also, there might be different requirements for users and collaborators. }}
+This repository can be used with common constraint-based modelling toolboxes such as:
 
+- **Python**: [COBRApy](https://github.com/opencobra/cobrapy)  
+- **MATLAB**: [COBRA Toolbox](https://opencobra.github.io/cobratoolbox/stable/)  
+- Other compatible tools that support SBML L3 and related formats.
 
-### Usage
+To obtain the models:
 
-{{ Describe how to load and save the model. }}
-
-
-### Contributing
-
-Contributions are always welcome! Please read the [contributing guideline](.github/CONTRIBUTING.md) to get started.
-
-
-### Contributors
-
-Code contributors are reported automatically by GitHub under [Contributors](https://github.com/{{organization or username}}/{{repository name}}/graphs/contributors), while other contributions come in as [Issues](https://github.com/{{organization or username}}/{{repository name}}/issues).
+```bash
+git clone https://github.com/{{organization or username}}/PxCm-GEM.git
+cd PxCm-GEM
